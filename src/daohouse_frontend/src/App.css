@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow-x: hidden;
+  /* background-color: #DADEE4; */
+}
+
+.gradient-background {
+  background: linear-gradient(180deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+@keyframes gradientMovement {
+  0% {
+    transform: translate(-50%, 50%);
+  }
+
+  25% {
+    transform: translate(50%, -50%);
+  }
+
+  50% {
+    transform: translate(50%, 50%);
+  }
+
+  75% {
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    transform: translate(-50%, 50%);
+  }
+}
+
+.animate-gradient {
+  animation: gradientMovement 10s linear infinite;
+}
+
+.bg-image-background {
+  background: linear-gradient(to right, #102228, #01090c);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.placeholder-custom::placeholder {
+  font-size: 16px;
+  color: #646464;
+  font-weight: 400;
+}
+
+.border-r {
+  border-right-width: 1px;
+}
+
+.proposal-editor {
+  position: relative;
+  min-height: 200px;
+}
+
+.proposal-editor .ql-toolbar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #f4f2ec;
+  border-left: 1px solid #ccc;
+  height: 100%;
+  padding: 10px;
+  max-width: 50px;
+  margin: 1px;
+  gap: 10px;
+  z-index: 10;
+}
+
+.proposal-editor .ql-container .ql-editor {
+  min-height: 200px;
+  border-top: 1px solid gray;
+}
+
+.editor-container {
+  position: relative;
+}

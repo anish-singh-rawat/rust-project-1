@@ -1,0 +1,55 @@
+{
+  "canisters": {
+    "ic_asset_handler": {
+      "candid": "src/ic_asset_handler/ic_asset_handler.did",
+      "package": "ic_asset_handler",
+      "type": "rust"
+    },
+    "daohouse_backend": {
+      "candid": "src/daohouse_backend/daohouse_backend.did",
+      "package": "daohouse_backend",
+      "type": "rust"
+    },
+    "dao_canister": {
+      "candid": "src/dao_canister/dao_canister.did",
+      "package": "dao_canister",
+      "type": "rust"
+    },
+    "icrc1_ledger_canister": {
+      "type": "custom",
+      "candid": "https://raw.githubusercontent.com/dfinity/ic/7dee90107a88b836fc72e78993913988f4f73ca2/rs/rosetta-api/icrc1/ledger/ledger.did",
+      "wasm": "https://download.dfinity.systems/ic/7dee90107a88b836fc72e78993913988f4f73ca2/canisters/ic-icrc1-ledger.wasm.gz",
+      "specified_id": "mxzaz-hqaaa-aaaar-qaada-cai"
+  },
+    "internet_identity": {
+      "type": "custom",
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz",
+      "shrink": false,
+      "remote": {
+        "candid": "internet_identity.did",
+        "id": {
+          "ic": "bw4dl-smaaa-aaaaa-qaacq-cai"
+        }
+      }
+    },
+    "daohouse_frontend": {
+      "dependencies": [
+        "daohouse_backend"
+      ],
+      "source": [
+        "src/daohouse_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "daohouse_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
